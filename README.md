@@ -83,6 +83,7 @@ in order to maximize HTC performances.
 Relevant parameters (input):
  
 * file_name: excel file
+* num_classes: #classes
 * classe_label: label on the basis of which the score are calculated 
 * testo_label: items names
 
