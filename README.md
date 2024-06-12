@@ -49,8 +49,6 @@ with the following correspondences:
 
 ## *Virtual leaves* generation
 
----------------
-
 This code was designed to build to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
 
 * filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_keywords.py)
@@ -75,8 +73,6 @@ Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean
 
 
 ## *Abstracts* generation from *Virtual leaves*
-
----------------
 
 This code was designed to generate a synthetic dataset (Web of Science) starting from a dataset containing synthetic keywords generated
 in the prior task.
@@ -104,8 +100,6 @@ torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
 
 ## *Abstracts* generation from *leaves*
 
----------------
-
 This code was designed to generate a synthetic dataset (Web of Science) starting Web of Science taxonomy.
 
 * filename: [genera_zero_daArea_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daArea_abs.py)
@@ -125,8 +119,6 @@ torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
 ```
 
 ## Synthetic dataset sizing
-
----------------
 
 This code was designed to evaluate both dataset generated from leaves and dataset generated from virtual leaves, with the Chamfer Distance Score and Remote Clique Score,
 in order to maximize HTC performances.
