@@ -127,5 +127,5 @@ Relevant parameters (input):
 
 Output:
 
-* Average Chamfer Distance Score
-* Average Remote Clique Score
+* Chamfer Distance Score (Avg)
+* Remote Clique Score (Avg)
