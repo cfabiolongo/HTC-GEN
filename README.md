@@ -63,15 +63,26 @@ torchrun --nproc_per_node 1 genera_zero_keywords.py \
 
 ## *Abstracts* generation from *Virtual leaves*
 
-This code was designed to build... 
+This code was designed to generate a synthetic dataset (Web of Science) starting from a dataset containing synthetic keywords generated
+in the prior task.
 
-* filename: [llama_2_ft_dolly_lora.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/llama_2_ft_dolly_lora.py)
+* filename: [genera_zero_daKey_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daKey_abs.py)
 
 Relevant parameters:
  
-* Training epochs
-* Learning rate
-* Path fine-tuned model 
+* temperature: Llama 2 temperature (Default=0.6)
+* taxonomy: excel file containing the taxonomy+keywords (as virtual leaves): Domain, Y1, Y, area, keywords.
+* output: text file containing all zero-shot generated items.
+* excel_gen: excel file containing all zero-shot generated items and their labels (plus keywords) in the taxonomy.
+
+```sh
+torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
+    --ckpt_dir ../llama-2-7b-chat/ \
+    --tokenizer_path ../tokenizer.model \
+    --max_seq_len 512 --max_batch_size 6  
+```
+
+
 
 ## *Abstracts* generation from *leaves*
 
