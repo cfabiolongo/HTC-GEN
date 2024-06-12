@@ -99,7 +99,8 @@ def main(
 
             print("\n==================================\n")
 
-        df_base.to_excel("dataset/zeroshot_total_keywords_wos.xlsx")
+        excel_gen = "dataset/zeroshot_total_keywords_wos.xlsx"
+        df_base.to_excel(excel_gen)
 
 if __name__ == "__main__":
     fire.Fire(main)
