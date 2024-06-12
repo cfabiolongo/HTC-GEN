@@ -61,6 +61,8 @@ torchrun --nproc_per_node 1 genera_zero_keywords.py \
     --max_seq_len 512 --max_batch_size 6  
 ```
 
+The Genereted dataset must be filtered with [wos_total_keywords_clean.ipynb](wos_total_keywords_clean.ipynb). 
+
 
 ## *Abstracts* generation from *Virtual leaves*
 
