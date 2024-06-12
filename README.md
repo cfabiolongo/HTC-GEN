@@ -72,3 +72,21 @@ Relevant parameters:
 * Learning rate
 * Path fine-tuned model 
 
+
+## Synthetic dataset sizing
+
+This code was designed to evaluate both dataset generated from leaves and dataset generated from virtual leaves, with the Chamfer Distance Score and Remote Clique Score,
+in order to maximize HTC performances.
+
+* filename: [diversity_mean.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/diversity_mean.py)
+
+Relevant parameters (input):
+ 
+* file_name: excel file
+* classe_label: label on the basis of which the score are calculated 
+* testo_label: items names
+
+Output:
+
+* Average Chamfer Distance Score
+* Average Remote Clique Score
