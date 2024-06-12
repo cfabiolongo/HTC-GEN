@@ -7,10 +7,12 @@ from llama import Llama, Dialog
 import pandas as pd
 
 
+
+
 def main(
     ckpt_dir: str,
     tokenizer_path: str,
-    temperature: float = 1.5,
+    temperature: float = 0.6,
     top_p: float = 0.9,
     max_seq_len: int = 512,
     max_batch_size: int = 8,
@@ -40,25 +42,25 @@ def main(
     )
 
     # Scrittura file scores
-    output = "results/results_abstract_daArea100-t15_generation.txt"
+    output = "results/results_abs_zeroshot_da10Keywords-REAL100p1_wos.txt"
     with open(output, "w") as file:
-        file.write("ZERO-SHOT abstract from area generation:\n\n")
+        file.write("ZERO-SHOT abstract from keywords generation:\n\n")
 
     # Definisci le colonne del DataFrame
-    colonne = ['Y1', 'Domain', 'Y', 'area']
+    colonne = ['Y1', 'Domain', 'Y', 'area', 'Keyword']
     # Crea un DataFrame vuoto con le colonne definite
     df_base = pd.DataFrame(columns=colonne)
     # taxonomy
-    taxonomy = 'dataset/conteggi_aree_total_keywords.xlsx'
+    taxonomy = 'dataset/real_wos_keywords_data_splitted_rifinito2.xlsx'
+
     df = pd.read_excel(taxonomy)
 
     for index, row in df.iterrows():
-        sys_content = "Consider only abstracts including keywords (separated by commas), in English"
-        user_content = "Generate an abstract of scientific paper, in the area: "+row['area'].strip()+" ("+row['Domain'].strip()+")"
-
-        print("\n\nElaborazione n. "+str(index)+" - area: "+row['area'].strip()+" - domain: "+row['Domain'].strip())
-        for x in range(0, 100):
-            print("\n ----> Passaggio n: "+str(x)+" di", row['area'].strip())
+        sys_content = "Consider only abstracts including keywords (separated by commas), in English" 
+        user_content = "Generate an abstract of a scientific article, with keywords, about the topic: "+row['keyword'].strip()+", in the area: "+row['area'].strip()+" ("+row['Domain'].strip()+")"
+        print("\n\nElaborazione n. "+str(index)+" - keyword: "+row['keyword'].strip()+" - area: "+row['area'].strip()+" - domain: "+row['Domain'].strip())
+        for x in range(0, 10):
+            print("\n ----> Passaggio n: "+str(x)+" di", row['keyword'].strip())
 
             dialogs: List[Dialog] = [
                 [
@@ -87,14 +89,14 @@ def main(
                     file.write("\n==================================\n")
 
                 # Crea un base nuovo DataFrame con tutti i codice in base alle iterazioni
-                df_nuovo = pd.DataFrame({'Y1': row['Y1'], 'Domain': row['Domain'], 'Y': row['Y'], 'area': row['area']}, index=[0])
+                df_nuovo = pd.DataFrame({'Y1': row['Y1'], 'Domain': row['Domain'], 'Y': row['Y'], 'area': row['area'], 'Keyword': row['keyword']}, index=[0])
 
                 # Concatena il nuovo DataFrame con il DataFrame vuoto df_base
                 df_base = pd.concat([df_base, df_nuovo])
 
                 print("\n==================================\n")
 
-        excel_gen = "dataset/zeroshot_daArea100-t15_wos.xlsx"
+        excel_gen = "dataset/zeroshot_da10Keywords-REAL100p1_wos.xlsx"
         df_base.to_excel(excel_gen)
 
 if __name__ == "__main__":

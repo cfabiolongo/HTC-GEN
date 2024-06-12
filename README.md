@@ -1,7 +1,9 @@
 # HTC-GEN (Hieralchical Text Classification Generative)
-This is the re[genera_zero_daArea_abs.py](genera_zero_daArea_abs.py)pository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for hieralchical text classification, presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
+This is the repository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for hieralchical text classification, presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
 
 ![Image 1](images/HTC-Inference_generic.jpg)
+
+
 
 # Installation
 [genera_zero_daArea_abs.py](genera_zero_daArea_abs.py)
@@ -59,14 +61,17 @@ torchrun --nproc_per_node 1 genera_zero_keywords.py \
 ```
 
 
-
-
 ## *Abstracts* generation from *Virtual leaves*
 
 This code was designed to generate a synthetic dataset (Web of Science) starting from a dataset containing synthetic keywords generated
 in the prior task.
 
 * filename: [genera_zero_daKey_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daKey_abs.py)
+
+From *real* most frequent 10 keywords from Web of Science:
+
+* filename: [genera_zero_daKey_REAL_abs.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/genera_zero_daKey_REAL_abs.py)
+
 
 Relevant parameters:
  

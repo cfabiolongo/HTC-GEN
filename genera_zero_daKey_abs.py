@@ -56,8 +56,9 @@ def main(
     df = pd.read_excel(taxonomy)
 
     for index, row in df.iterrows():
-        sys_content = "Consider only abstracts including keywords (separated by commas), in English, about the keyword: "+row['Keyword'].strip()+", in the area: "+row['area'].strip()+" ("+row['Domain'].strip()+")"
-        user_content = "Generate an abstract of a scientific article, with keywords"
+        sys_content = "Consider only abstracts including keywords (separated by commas), in English"
+        user_content = "Generate an abstract of a scientific article, with keywords, about the topic: " + row['Keyword'].strip() + ", in the area: " + row['area'].strip() + " (" + row['Domain'].strip() + ")"
+
         print("\n\nElaborazione n. "+str(index)+" - keyword: "+row['Keyword'].strip()+" - area: "+row['area'].strip()+" - domain: "+row['Domain'].strip())
         for x in range(0, 5):
             print("\n ----> Passaggio n: "+str(x)+" di", row['Keyword'].strip())
