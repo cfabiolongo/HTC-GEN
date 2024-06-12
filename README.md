@@ -8,8 +8,6 @@ As supervised HTC model, all experiments were conducted with [HGCLR](https://arx
 
 # Installation
 
----------------
-
 The code was tested on Ubuntu (Pop!_OS 22.04 LTS) with a single NVIDIA RTX A4000 (16GB).
 
 ### Pytorch
@@ -35,8 +33,6 @@ Download and install Llama 2: https://github.com/meta-llama/llama
 
 
 # Code usage
-
----------------
 
 The code includes source files for the following tasks, considering the case study of [Web of Science](https://data.mendeley.com/datasets/9rw3vkcfy4/6) dataset:
 
