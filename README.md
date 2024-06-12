@@ -1,5 +1,6 @@
 # HTC-GEN (Hieralchical Text Classification Generative)
 This is the repository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for Hieralchical Text Classification (HTC), presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
+The code was tested on Ubuntu (Pop!_OS 22.04 LTS) with a single NVIDIA RTX A4000 (16GB).
 
 ![Image 1](images/HTC-Inference_generic.jpg)
 
