@@ -40,7 +40,7 @@ def main(
     )
 
     # Scrittura file scores
-    output = "results/results_abstract_daArea100-t15_generation.txt"
+    output = "results/results_abstract_daArea100-p1_generation.txt"
     with open(output, "w") as file:
         file.write("ZERO-SHOT abstract from area generation:\n\n")
 
@@ -94,7 +94,7 @@ def main(
 
                 print("\n==================================\n")
 
-        excel_gen = "dataset/zeroshot_daArea100-t15_wos.xlsx"
+        excel_gen = "zeroshot_daArea100-p1_wos.xlsx"
         df_base.to_excel(excel_gen)
 
 if __name__ == "__main__":
