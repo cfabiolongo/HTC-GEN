@@ -40,7 +40,7 @@ with the following correspondences:
 
 This code was designed to build... 
 
-* filename: [llama_2_ft_dolly_lora.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/llama_2_ft_dolly_lora.py)
+* filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/genera_zero_keywords.py)
 
 Relevant parameters:
  
