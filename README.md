@@ -38,16 +38,27 @@ with the following correspondences:
 
 ## *Virtual leaves* generation
 
-This code was designed to build a dataset made of 20 keywords for each Area in the Web of Science taxonomy.
+This code was designed to build to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
 
 * filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/genera_zero_keywords.py)
 
 Relevant parameters:
  
 * temperature: Llama 2 temperature (Default=0.6)
-* taxonomy: excel file containing the taxonomy. In this case-study case (Web of Science), the taxonomy is: Domain, Y1, Y, area.
+* taxonomy: excel file containing the taxonomy. In this case-study case (Web of Science) the taxonomy is: Domain, Y1, Y, area.
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
+
+The python code must be lanched with:
+
+```sh
+torchrun --nproc_per_node 1 genera_zero_keywords.py \
+    --ckpt_dir ../llama-2-7b-chat/ \
+    --tokenizer_path ../tokenizer.model \
+    --max_seq_len 512 --max_batch_size 6  
+```
+
+
 
 
 ## *Abstracts* generation from *Virtual leaves*
