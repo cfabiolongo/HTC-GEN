@@ -43,7 +43,7 @@ with the following correspondences:
 
 This code was designed to build to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
 
-* filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/genera_zero_keywords.py)
+* filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_keywords.py)
 
 Relevant parameters:
  
@@ -61,7 +61,7 @@ torchrun --nproc_per_node 1 genera_zero_keywords.py \
     --max_seq_len 512 --max_batch_size 6  
 ```
 
-Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean.ipynb](wos_total_keywords_clean.ipynb). 
+Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean.ipynb](https://github.com/cfabiolongo/HTC-GEN/blob/master/wos_total_keywords_clean.ipynb). 
 
 
 ## *Abstracts* generation from *Virtual leaves*
