@@ -3,6 +3,7 @@ This is the repository of the Python (3.10+) implementation of HTC-GEN, a state-
 
 ![Image 1](images/HTC-Inference_generic.jpg)
 
+As supervised HTC model, all experiments were conducted with [HGCLR](https://arxiv.org/abs/2203.03825).
 
 
 # Installation
