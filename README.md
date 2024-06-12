@@ -7,7 +7,7 @@ As supervised HTC model, all experiments were conducted with [HGCLR](https://arx
 
 
 # Installation
-[genera_zero_daArea_abs.py](genera_zero_daArea_abs.py)
+
 ### Pytorch
 
 Follow the instructions reported [here](https://pytorch.org/) for the current system.
