@@ -49,7 +49,7 @@ Relevant parameters:
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
 
-The python code must be lanched with:
+The python code must be launched with:
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_keywords.py \
