@@ -1,6 +1,5 @@
 # HTC-GEN (Hieralchical Text Classification Generative)
 This is the repository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for Hieralchical Text Classification (HTC), presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
-The code was tested on Ubuntu (Pop!_OS 22.04 LTS) with a single NVIDIA RTX A4000 (16GB).
 
 ![Image 1](images/HTC-Inference_generic.jpg)
 
@@ -9,15 +8,25 @@ As supervised HTC model, all experiments were conducted with [HGCLR](https://arx
 
 # Installation
 
+---------------
+
+The code was tested on Ubuntu (Pop!_OS 22.04 LTS) with a single NVIDIA RTX A4000 (16GB).
+
 ### Pytorch
+
+---------------
 
 Follow the instructions reported [here](https://pytorch.org/) for the current system.
 
 ### Llama 2 
 
+---------------
+
 Download and install Llama 2: https://github.com/meta-llama/llama
 
 ### Pandas 
+
+---------------
 
 ```sh
 > pip install pandas
@@ -26,6 +35,8 @@ Download and install Llama 2: https://github.com/meta-llama/llama
 
 
 # Code usage
+
+---------------
 
 The code includes source files for the following tasks, considering the case study of [Web of Science](https://data.mendeley.com/datasets/9rw3vkcfy4/6) dataset:
 
@@ -41,6 +52,8 @@ with the following correspondences:
 
 
 ## *Virtual leaves* generation
+
+---------------
 
 This code was designed to build to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
 
@@ -67,6 +80,8 @@ Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean
 
 ## *Abstracts* generation from *Virtual leaves*
 
+---------------
+
 This code was designed to generate a synthetic dataset (Web of Science) starting from a dataset containing synthetic keywords generated
 in the prior task.
 
@@ -91,9 +106,9 @@ torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
     --max_seq_len 512 --max_batch_size 6  
 ```
 
-
-
 ## *Abstracts* generation from *leaves*
+
+---------------
 
 This code was designed to generate a synthetic dataset (Web of Science) starting Web of Science taxonomy.
 
@@ -113,8 +128,9 @@ torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
     --max_seq_len 512 --max_batch_size 6  
 ```
 
-
 ## Synthetic dataset sizing
+
+---------------
 
 This code was designed to evaluate both dataset generated from leaves and dataset generated from virtual leaves, with the Chamfer Distance Score and Remote Clique Score,
 in order to maximize HTC performances.
