@@ -1,10 +1,10 @@
 # HTC-GEN (Hieralchical Text Classification Generative)
-This is the repository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for hieralchical text classification, presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
+This is the re[genera_zero_daArea_abs.py](genera_zero_daArea_abs.py)pository of the Python (3.10+) implementation of HTC-GEN, a state-of-the-art zero-shot approach for hieralchical text classification, presented as regular paper at [DATA 2024](https://data.scitevents.org/Home.aspx) conference held in Dijon in 9-11/07/2024.
 
 ![Image 1](images/HTC-Inference_generic.jpg)
 
 # Installation
-
+[genera_zero_daArea_abs.py](genera_zero_daArea_abs.py)
 ### Pytorch
 
 Follow the instructions reported [here](https://pytorch.org/) for the current system.
@@ -86,15 +86,23 @@ torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
 
 ## *Abstracts* generation from *leaves*
 
-This code was designed to build... 
+This code was designed to generate a synthetic dataset (Web of Science) starting Web of Science taxonomy.
 
-* filename: [llama_2_ft_dolly_lora.py](https://github.com/cfabiolongo/elicit-meta-llm/blob/master/llama_2_ft_dolly_lora.py)
+* filename: [genera_zero_daArea_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daArea_abs.py)
 
 Relevant parameters:
  
-* Training epochs
-* Learning rate
-* Path fine-tuned model 
+* temperature: Llama 2 temperature (Default=0.6)
+* taxonomy: excel file containing the Web of Science taxonomy: Domain, Y1, Y, area.
+* output: text file containing all zero-shot generated items.
+* excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
+
+```sh
+torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
+    --ckpt_dir ../llama-2-7b-chat/ \
+    --tokenizer_path ../tokenizer.model \
+    --max_seq_len 512 --max_batch_size 6  
+```
 
 
 ## Synthetic dataset sizing
