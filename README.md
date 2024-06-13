@@ -60,7 +60,7 @@ Relevant parameters:
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
 
-The python code must be launched with (set proper path for llama-2-7b-chat and tokenizer.model):
+The python code must be launched with (set proper path for *llama-2-7b-chat* and *tokenizer.model*):
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_keywords.py \
