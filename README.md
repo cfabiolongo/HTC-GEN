@@ -49,7 +49,7 @@ with the following correspondences:
 
 ## *Virtual leaves* generation
 
-This code was designed to build to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
+This code was designed to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
 
 * filename: [genera_zero_keywords.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_keywords.py)
 
@@ -60,7 +60,7 @@ Relevant parameters:
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
 
-The python code must be launched with:
+The python code must be launched with (set proper path for llama-2-7b-chat and tokenizer.model):
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_keywords.py \
@@ -74,7 +74,7 @@ Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean
 
 ## *Abstracts* generation from *Virtual leaves*
 
-This code was designed to generate a synthetic dataset (Web of Science) starting from a dataset containing synthetic keywords generated
+This code was designed to generate a synthetic dataset (Web of Science) starting from another dataset containing synthetic keywords generated
 in the prior task.
 
 * filename: [genera_zero_daKey_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daKey_abs.py)
@@ -90,6 +90,8 @@ Relevant parameters:
 * taxonomy: excel file containing the taxonomy+keywords (as virtual leaves): Domain, Y1, Y, area, keywords.
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels (plus keywords) in the taxonomy.
+
+The python code must be launched with:
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
@@ -110,6 +112,8 @@ Relevant parameters:
 * taxonomy: excel file containing the Web of Science taxonomy: Domain, Y1, Y, area.
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
+
+The python code must be launched with:
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
