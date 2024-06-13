@@ -95,6 +95,8 @@ torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
     --max_seq_len 512 --max_batch_size 6  
 ```
 
+Afterward, the genereted dataset must be filtered with [wos_FromArea_p1_clean.ipynb](https://github.com/cfabiolongo/HTC-GEN/blob/master/wos_FromArea_p1_clean.ipynb). 
+
 ## *Abstracts* generation from *Virtual leaves*
 
 This code was designed to generate a synthetic dataset (Web of Science) starting from another dataset containing synthetic keywords generated
