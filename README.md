@@ -49,6 +49,13 @@ with the following correspondences:
 Set proper paths for *llama-2-7b-chat* and *tokenizer.model*.
 
 
+## *Web of Science* dataset analysis
+
+This code extracts the most recurrent keywords from the test target (wos_test.xls) Web of Science dataset.
+
+* filename: [wos_test_analysis.ipynb](https://github.com/cfabiolongo/HTC-GEN/blob/master/wos_test_analysis.ipynb)
+
+
 ## *Virtual leaves* generation
 
 This code was designed to extend the Web of Science with 20 keywords (virtual leaves) for each Area (leaves).
@@ -124,6 +131,9 @@ torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
     --tokenizer_path ../tokenizer.model \
     --max_seq_len 512 --max_batch_size 6  
 ```
+
+Afterward, the genereted dataset must be filtered with [wos_FromArea_p1_clean.ipynb](https://github.com/cfabiolongo/HTC-GEN/blob/master/wos_FromArea_p1_clean.ipynb). 
+
 
 ## Synthetic dataset sizing
 
