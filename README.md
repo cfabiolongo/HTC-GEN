@@ -34,7 +34,7 @@ Download and install Llama 2: https://github.com/meta-llama/llama
 
 # Code usage
 
-The code includes source files for the following tasks, considering the case study of [Web of Science](https://data.mendeley.com/datasets/9rw3vkcfy4/6) dataset:
+The code includes source files for the following tasks, considering the case study of [Web of Science](https://data.mendeley.com/datasets/9rw3vkcfy4/6) dataset. 
 
 * Virtual-leaves generation
 * Items generation from virtual-leaves
@@ -46,6 +46,7 @@ with the following correspondences:
 * leaf: area
 * virtual-leaf: keywords
 
+Set proper paths for *llama-2-7b-chat* and *tokenizer.model*. 
 
 ## *Virtual leaves* generation
 
@@ -60,7 +61,7 @@ Relevant parameters:
 * output: text file containing all zero-shot generated items.
 * excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
 
-The python code must be launched with (set proper path for *llama-2-7b-chat* and *tokenizer.model*):
+The python code must be launched with:
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_keywords.py \
