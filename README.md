@@ -46,8 +46,7 @@ with the following correspondences:
 * leaf: area
 * virtual-leaf: keywords
 
-Set proper paths for *llama-2-7b-chat* and *tokenizer.model*.
-
+PLEASE NOTE: set proper paths for ahead references to *llama-2-7b-chat* and *tokenizer.model* inside the Llama folder.
 
 ## *Web of Science* dataset analysis
 
