@@ -20,7 +20,7 @@ Follow the instructions reported [here](https://pytorch.org/) for the current sy
 
 ---------------
 
-Download and install Llama 2: https://github.com/meta-llama/llama
+Download and install Llama 2 (chat version): https://github.com/meta-llama/llama
 
 ### Pandas 
 
@@ -46,7 +46,8 @@ with the following correspondences:
 * leaf: area
 * virtual-leaf: keywords
 
-Set proper paths for *llama-2-7b-chat* and *tokenizer.model*. 
+Set proper paths for *llama-2-7b-chat* and *tokenizer.model*.
+
 
 ## *Virtual leaves* generation
 
@@ -72,6 +73,27 @@ torchrun --nproc_per_node 1 genera_zero_keywords.py \
 
 Afterward, the genereted dataset must be filtered with [wos_total_keywords_clean.ipynb](https://github.com/cfabiolongo/HTC-GEN/blob/master/wos_total_keywords_clean.ipynb). 
 
+## *Abstracts* generation from *leaves*
+
+This code was designed to generate a synthetic dataset (Web of Science) starting Web of Science taxonomy.
+
+* filename: [genera_zero_daArea_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daArea_abs.py)
+
+Relevant parameters:
+ 
+* temperature: Llama 2 temperature (Default=0.6)
+* taxonomy: excel file containing the Web of Science taxonomy: Domain, Y1, Y, area.
+* output: text file containing all zero-shot generated items.
+* excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
+
+The python code must be launched with:
+
+```sh
+torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
+    --ckpt_dir ../llama-2-7b-chat/ \
+    --tokenizer_path ../tokenizer.model \
+    --max_seq_len 512 --max_batch_size 6  
+```
 
 ## *Abstracts* generation from *Virtual leaves*
 
@@ -96,28 +118,6 @@ The python code must be launched with:
 
 ```sh
 torchrun --nproc_per_node 1 genera_zero_daKey_abs.py \
-    --ckpt_dir ../llama-2-7b-chat/ \
-    --tokenizer_path ../tokenizer.model \
-    --max_seq_len 512 --max_batch_size 6  
-```
-
-## *Abstracts* generation from *leaves*
-
-This code was designed to generate a synthetic dataset (Web of Science) starting Web of Science taxonomy.
-
-* filename: [genera_zero_daArea_abs.py](https://github.com/cfabiolongo/HTC-GEN/blob/master/genera_zero_daArea_abs.py)
-
-Relevant parameters:
- 
-* temperature: Llama 2 temperature (Default=0.6)
-* taxonomy: excel file containing the Web of Science taxonomy: Domain, Y1, Y, area.
-* output: text file containing all zero-shot generated items.
-* excel_gen: excel file containing all zero-shot generated items and their labels in the taxonomy.
-
-The python code must be launched with:
-
-```sh
-torchrun --nproc_per_node 1 genera_zero_daArea_abs.py \
     --ckpt_dir ../llama-2-7b-chat/ \
     --tokenizer_path ../tokenizer.model \
     --max_seq_len 512 --max_batch_size 6  
